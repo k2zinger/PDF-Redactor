@@ -1,0 +1,186 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="X_Add_Watermark" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="WatermarkFile" Type="InArgument(x:String)" />
+    <x:Property Name="InputFile" Type="InArgument(x:String)" />
+    <x:Property Name="OutputFile" Type="InArgument(x:String)" />
+    <x:Property Name="WatermarkPosition" Type="InArgument(sd:Point)" />
+    <x:Property Name="InputFolder" Type="InArgument(x:String)" />
+    <x:Property Name="OutputFolder" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:X_Add_Watermark.WatermarkFile>
+    <InArgument x:TypeArguments="x:String" />
+  </this:X_Add_Watermark.WatermarkFile>
+  <this:X_Add_Watermark.WatermarkPosition>
+    <InArgument x:TypeArguments="sd:Point" />
+  </this:X_Add_Watermark.WatermarkPosition>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1574,1187</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>X_Add_Watermark_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="26">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Windows</x:String>
+      <x:String>System.Windows.Forms</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="18">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Watermark" sap:VirtualizedContainerService.HintSize="376,438" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:Image" Name="Watermark" />
+      <Variable x:TypeArguments="s:String[]" Default="[{&quot;.jpeg&quot;,&quot;.jpg&quot;,&quot;.png&quot;,&quot;.gif&quot;,&quot;.tiff&quot;,&quot;.tif&quot;}]" Name="Formats" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="380,345" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="338,253" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+            <ui:MultipleAssign.AssignOperations>
+              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[InputFile]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">C:\Users\bernard.lawes\AppData\Local\Temp\Working\Redacted-1.pngx</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[OutputFile]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">C:\Users\bernard.lawes\AppData\Local\Temp\Working\Redacted-LGO.png</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[WatermarkFile]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">C:\Users\bernard.lawes\Documents\UiPath\LAB-ROOM\UiPathTeam.PDFRedaction\lib\watermark.png</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="sd:Point">[WatermarkPosition]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="sd:Point">[New system.Drawing.Point(0,0)]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[OutputFOlder]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">C:\Users\bernard.lawes\AppData\Local\Temp\Working\OUT</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[Inputfolder]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">C:\Users\bernard.lawes\AppData\Local\Temp\Working</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+              </scg:List>
+            </ui:MultipleAssign.AssignOperations>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:MultipleAssign>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="If IsNothing(watermarkfile) Then &#xA;&#x9;console.WriteLine(&quot;Watermark Image File is required&quot;)&#xA;&#x9;Return&#xA;End If&#xA;&#xA;If Not System.io.File.Exists(WatermarkFile) Then &#xA;&#x9;console.WriteLine(&quot;Watermark File Not Found:L &quot; + watermarkfile)&#xA;&#x9;Return&#xA;End If&#xA;&#xA;Try&#xA;&#x9;watermark = system.Drawing.Image.FromFile(WaterMarkFile)&#xA;Catch ex As exception&#xA;&#x9;Console.WriteLine(&quot;Watermark File Access Error: &quot; + ex.Message)&#xA;Finally&#xA;&#x9;&#xA;End Try&#xA;&#xA;If IsNothing(watermark) Then Return&#xA;&#x9;&#xA;If isnothing(WaterMarkPosition) Then WatermarkPosition = New System.Drawing.Point(0,0)" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="InvokeCode_7">
+      <ui:InvokeCode.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="WatermarkFile">[WatermarkFile]</InArgument>
+        <InOutArgument x:TypeArguments="sd:Point" x:Key="WatermarkPosition">[WatermarkPosition]</InOutArgument>
+        <OutArgument x:TypeArguments="sd:Image" x:Key="Watermark">[Watermark]</OutArgument>
+      </ui:InvokeCode.Arguments>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:InvokeCode>
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="If isnothing(Watermark) Then &#x9;Return&#xD;&#xA;&#xD;&#xA;Dim BoolMulti As Boolean&#xD;&#xA;Dim InputFiles As String()&#xD;&#xA;&#xD;&#xA;If Not IsNothing(InputFile) AndAlso Not IsNothing(OutputFile) AndAlso system.io.file.Exists(InputFile) AndAlso system.io.path.IsPathRooted(OutputFile) AndAlso formats.Contains(system.io.path.GetExtension(Inputfile).ToLower)  AndAlso formats.Contains(system.io.path.GetExtension(Outputfile).ToLower) Then&#xD;&#xA;&#x9;console.WriteLine(&quot;Watermarking File&quot;)&#xD;&#xA;&#x9;InputFiles = {inputFile}&#xD;&#xA; &#xD;&#xA;Else &#xD;&#xA;&#x9;&#x9;If Not IsNothing(InputFolder) AndAlso Not IsNothing(OutputFolder) AndAlso system.io.Directory.Exists(InputFolder) AndAlso system.io.Directory.Exists(OutputFolder) Then&#xD;&#xA;&#x9;&#x9;&#x9;console.WriteLine(&quot;Watermarking Multiple Items&quot;)&#xD;&#xA;&#x9;&#x9;&#x9;InputFiles = system.io.directory.getfiles(InputFolder)&#xD;&#xA;&#x9;&#x9;&#x9;BoolMulti = True&#xD;&#xA;&#x9;&#x9;Else &#xD;&#xA;&#x9;&#x9;&#x9;console.WriteLine(&quot;Watermark Cancelled: &quot;+vbCrLf+&quot;Provide either (InputFile and OutputFile), or provide (Input Folder and OutputFolder)&quot;)&#xD;&#xA;&#x9;&#x9;&#x9;Return&#xD;&#xA;&#x9;&#x9;End If&#xD;&#xA;End If&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;Dim img As system.Drawing.Image&#xD;&#xA;Dim format As system.drawing.imaging.ImageFormat&#xD;&#xA;Dim pb As system.windows.Forms.PictureBox = New system.Windows.Forms.PictureBox()&#xD;&#xA;Dim ext As String&#xD;&#xA;&#xD;&#xA;For Each item As String In InputFiles&#xD;&#xA;&#x9;' Open File&#xD;&#xA;&#x9;Try&#xD;&#xA;&#x9;&#x9;img = system.Drawing.Image.FromFile(item)&#xD;&#xA;&#x9;Catch ex As Exception&#xD;&#xA;&#x9;&#x9;console.WriteLine(&quot;File Access Error: &quot; + item)&#xD;&#xA;&#x9;&#x9;Continue For&#xD;&#xA;&#x9;Finally&#xD;&#xA;&#x9;End Try&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;' Set Format&#xD;&#xA;&#x9;ext =  system.io.path.GetExtension(Item).ToLower&#xD;&#xA;&#x9;Select Case ext&#xD;&#xA;&#x9;&#x9;Case &quot;.jpeg&quot; &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Format =  system.drawing.imaging.ImageFormat.Jpeg&#xD;&#xA;&#x9;&#x9;Case &quot;.jpg&quot;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Format =  system.drawing.imaging.ImageFormat.Jpeg&#xD;&#xA;&#x9;&#x9;Case &quot;.png&quot;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Format =  system.drawing.imaging.ImageFormat.Png&#xD;&#xA;&#x9;&#x9;Case &quot;.gif&quot;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Format =  system.drawing.imaging.ImageFormat.Gif&#xD;&#xA;&#x9;&#x9;Case &quot;.tif&quot;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Format =  system.drawing.imaging.ImageFormat.Tiff&#xD;&#xA;&#x9;&#x9;Case &quot;.tiff&quot;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Format =  system.drawing.imaging.ImageFormat.Tiff&#xD;&#xA;&#x9;&#x9;Case Else&#xD;&#xA;&#x9;&#x9;&#x9;Console.WriteLine(&quot;File Format Not Supported: &quot; + Item)&#xD;&#xA;&#x9;&#x9;&#x9;Continue For&#xD;&#xA;&#x9;End Select&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;' Set PaintBox&#xD;&#xA;&#x9;pb.image =  New Bitmap(img)&#xD;&#xA;&#xD;&#xA;&#x9;' Set Graphics&#xD;&#xA;&#x9;Using g  As system.Drawing.Graphics = system.Drawing.Graphics.FromImage(pb.image) &#xD;&#xA;&#x9;&#x9;' Add Watermark&#xD;&#xA;&#x9;&#x9;g.DrawImage(Watermark, New System.Drawing.PointF(WatermarkPosition.X,WatermarkPosition.Y))&#xD;&#xA;&#x9;End Using&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;' Set File Name&#xD;&#xA;&#x9;If boolMulti Then OutputFile = system.io.path.combine(OutputFolder,system.io.path.GetFileNameWithoutExtension(item))+ext&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Save the image to disk&#xD;&#xA;&#x9;Try&#xD;&#xA;&#x9;&#x9;&#x9;pb.Image.Save(OutputFIle, Format)&#xD;&#xA;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;Catch ex As Exception&#xD;&#xA;&#x9;&#x9;&#x9;console.WriteLine(&quot;Can't Save File: &quot; + ex.Message + &quot; &quot; + OutputFile)&#xD;&#xA;&#x9;Finally&#xD;&#xA;&#x9;&#x9;&#x9;'Dispose Image&#xD;&#xA;&#x9;&#x9;&#x9;img.Dispose()&#xD;&#xA;&#x9;&#x9;&#x9;OutputFile = Nothing&#xD;&#xA;&#x9;&#x9;&#x9;pb.Image = Nothing&#xD;&#xA;&#x9;End Try&#xD;&#xA;&#x9;&#xD;&#xA;Next&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;&#xD;&#xA;" DisplayName="Add Watermark" sap:VirtualizedContainerService.HintSize="334,164" sap2010:WorkflowViewState.IdRef="InvokeCode_8">
+      <ui:InvokeCode.Arguments>
+        <InArgument x:TypeArguments="sd:Point" x:Key="WatermarkPosition">[WatermarkPosition]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="WatermarkFile">[WatermarkFile]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="InputFile">[InputFile]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="OutputFile">[OutputFile]</InArgument>
+        <InArgument x:TypeArguments="sd:Image" x:Key="Watermark">[Watermark]</InArgument>
+        <InArgument x:TypeArguments="s:String[]" x:Key="formats">[Formats]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="InputFolder">[InputFolder]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="OutputFOlder">[OutputFolder]</InArgument>
+      </ui:InvokeCode.Arguments>
+    </ui:InvokeCode>
+  </Sequence>
+</Activity>
