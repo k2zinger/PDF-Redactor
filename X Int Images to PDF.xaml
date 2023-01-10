@@ -1,0 +1,101 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Image_2_PDF" this:Image_2_PDF.Resolution="72" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/document-processing-contracts/dom" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="Folder" Type="InArgument(x:String)" />
+    <x:Property Name="FileOut" Type="InArgument(x:String)" />
+    <x:Property Name="Resolution" Type="InArgument(x:Double)" />
+    <x:Property Name="DOM" Type="InArgument(p:Document)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1574,1187</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Image_2_PDF_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="44">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Dom</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="34">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR</AssemblyReference>
+      <AssemblyReference>UiPath.OmniPage.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentProcessing.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Image_2_PDF" sap:VirtualizedContainerService.HintSize="755,414" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <If Condition="[system.io.Directory.Exists(System.IO.Path.GetDirectoryName(FileOut))]" sap:VirtualizedContainerService.HintSize="713,322" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <ui:InvokeCode ContinueOnError="{x:Null}" Code="Try&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;   ' Create new pdf document and page&#xD;&#xA;        Dim doc As New PDFSharp.PDF.PdfDocument()&#xD;&#xA;        Dim oPage As PdfSharp.Pdf.PdfPage&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;Dim files As String() = system.io.directory.GetFiles(folderpath,&quot;*.png&quot;)&#xD;&#xA;&#x9;&#x9;Dim i As Int32&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;For Each filename As String In files &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'Create new oPage&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;oPage =New PdfSharp.Pdf.PdfPage&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;        ' Add the page to the pdf document and add the captured image to it&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;        doc.Pages.Add(oPage)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'Dim img As PDFSharp.Drawing.XImage  = PDFSharp.Drawing.XImage.FromFile(filename)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'Create an XImage Object from Image File &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Using xImg As PDFSharp.Drawing.XImage = PDFSharp.Drawing.XImage.FromFile(filename)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; If isnothing(DOM) Then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; if Resolution &lt; 10 then Resolution = 23&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; oPage.Width = xImg.PixelWidth * Resolution / xImg.HorizontalResolution&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; oPage.Height =  xImg.PixelHeight * Resolution / xImg.VerticalResolution&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; Else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;opage.Width = dom.Pages(i).Size.Width&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;opage.Height = dom.Pages(i).Size.Height&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; End If&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 'Draw current image file to page&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; Dim xgr As PdfSharp.Drawing.XGraphics = PdfSharp.Drawing.XGraphics.FromPdfPage(opage)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; xgr.DrawImage(xImg,0,0,opage.Width,opage.Height)&#xD;&#xA;&#x9;&#x9; &#x9;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;ximg.Dispose&#xD;&#xA;&#x9;&#x9; &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;End Using&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;i = i+1&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;Next&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;If files.Count = 0 Then &#xD;&#xA;&#x9;console.WriteLine(&quot;No Files to Convert to PDF&quot;)&#xD;&#xA;&#x9;Return&#xD;&#xA;End If&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9; 'If interactive Then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;'========== INTERACTIVE DIALOG ====================&#xD;&#xA; &#x9;&#x9;        ' instantiate a Bitmap object&#xD;&#xA; &#x9;&#x9;        'Dim filesaveas As New SaveFileDialog&#xD;&#xA;&#x9;&#x9;        'filesaveas.Filter = (&quot;PDF File|*.pdf&quot;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;'if Button save is clicked.. Save the Document&#xD;&#xA;&#x9;&#x9;        'Dim btnSave As system.Windows.Forms.DialogResult = filesaveas.ShowDialog()&#xD;&#xA;&#x9;&#x9;        'If btnSave.Equals(system.Windows.Forms.DialogResult.OK) Then&#xD;&#xA;&#x9;&#x9;         '   doc.Save(filesaveas.FileName)&#xD;&#xA;&#x9;&#x9;         '   doc.Close()&#xD;&#xA;&#x9;&#x9;        'End If&#xD;&#xA;&#x9;&#x9;'Else&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;'========= NON INTERACTIVE =======================&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;   If System.io.File.Exists(FilePDF) Then System.Io.File.Delete(FilePDF)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;   &#xD;&#xA;&#x9;&#x9;&#x9;   doc.Save(FilePDF)&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;   doc.Close()&#xD;&#xA;&#x9;&#x9;'End If&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;' A GDI+ Error occurrs if you don't dispose of the image&#xD;&#xA;        'img.Dispose()&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;If System.io.File.Exists(FilePDF) Then console.WriteLine(&quot;Saved: &quot; + FilePDF) Else console.WriteLine(&quot;Failed to Save: &quot; + FilePDF)&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;Catch ex As Exception&#xD;&#xA;&#x9;&#x9;console.WriteLine(&quot;Failed To Save: &quot; + FilePDF+vbcrlf+&quot;Please make sure the file Is Not currently In use, And Try again&quot;)&#xD;&#xA;Finally&#xD;&#xA;&#x9;&#xD;&#xA;End Try&#xD;&#xA;&#x9;&#x9; " DisplayName="Export All Images to a PDF" sap:VirtualizedContainerService.HintSize="334,164" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
+          <ui:InvokeCode.Arguments>
+            <InArgument x:TypeArguments="x:String" x:Key="folderpath">[Folder]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="FilePDF">[FileOut]</InArgument>
+            <InArgument x:TypeArguments="x:Double" x:Key="Resolution">[Resolution]</InArgument>
+            <InArgument x:TypeArguments="p:Document" x:Key="DOM">[DOM]</InArgument>
+          </ui:InvokeCode.Arguments>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:InvokeCode>
+      </If.Then>
+      <If.Else>
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[&quot;Error: Output Folder Does Not Exist: &quot;+vbcrlf+System.IO.Path.GetDirectoryName(FileOut)+&quot;\&quot;]" />
+      </If.Else>
+    </If>
+  </Sequence>
+</Activity>
