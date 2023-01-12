@@ -18,10 +18,10 @@
     <x:Null />
   </mva:VisualBasic.Settings>
   <sap2010:Annotation.AnnotationText>UPTF00000180eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjoiaHR0cHM6XC9cL2ZvcnVtLnVpcGF0aC5jb21cL3RcL3BkZi1yZWRhY3Rpb24tY3VzdG9tLWFjdGl2aXR5XC8yMzY4NDYiLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjoiVGhpcyBhY3Rpdml0eSByZWRhY3RzIFBERiBEb2N1bWVudHMgd2l0aG91dCB0aGUgdXNlIG9mIEFkb2JlIEFjcm9iYXQgcmVhZGVyLCBvciBhbnkgb3RoZXIgdGhpcmQgcGFydHkgZGVza3RvcCBzb2Z0d2FyZS4gIiwiPFZlcnNpb24+a19fQmFja2luZ0ZpZWxkIjoxfQ==</sap2010:Annotation.AnnotationText>
-  <sap:VirtualizedContainerService.HintSize>1574,1187</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1488,711</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Sequence_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="47">
+    <scg:List x:TypeArguments="x:String" Capacity="94">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -112,7 +112,7 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart sap2010:Annotation.AnnotationText="This activity redacts PDF Documents without the use of Adobe Acrobat reader, or any other third party desktop software. " sap:VirtualizedContainerService.HintSize="1226,636" sap2010:WorkflowViewState.IdRef="Flowchart_2">
+  <Flowchart sap2010:Annotation.AnnotationText="This activity redacts PDF Documents without the use of Adobe Acrobat reader, or any other third party desktop software. " sap:VirtualizedContainerService.HintSize="1226,646" sap2010:WorkflowViewState.IdRef="Flowchart_2">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:Int32" Default="0" Name="i" />
       <Variable x:TypeArguments="x:String" Default="[path.Combine(path.GetTempPath,&quot;redaction&quot;)]" Name="pathTemp" />
@@ -142,7 +142,7 @@
         <av:Point x:Key="ShapeLocation">10,92.5</av:Point>
         <av:Size x:Key="ShapeSize">60,75</av:Size>
         <x:Double x:Key="Width">1192</x:Double>
-        <av:PointCollection x:Key="ConnectorLocation">70,130 660,130</av:PointCollection>
+        <av:PointCollection x:Key="ConnectorLocation">70,130 100,130 100,142 660,142</av:PointCollection>
         <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
@@ -153,11 +153,11 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">660,97</av:Point>
-          <av:Size x:Key="ShapeSize">200,66</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">760,163 760,213</av:PointCollection>
+          <av:Size x:Key="ShapeSize">200,90</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">760,187 760,213</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Validate Input Parameters" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_47">
+      <Sequence DisplayName="Validate Input Parameters" sap:VirtualizedContainerService.HintSize="200,90" sap2010:WorkflowViewState.IdRef="Sequence_47">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -192,8 +192,8 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <av:Point x:Key="ShapeLocation">720.5,213</av:Point>
               <av:Size x:Key="ShapeSize">79,87</av:Size>
-              <av:PointCollection x:Key="FalseConnector">799.5,256.5 969.5,256.5</av:PointCollection>
-              <av:PointCollection x:Key="TrueConnector">720.5,256.5 550.5,256.5</av:PointCollection>
+              <av:PointCollection x:Key="FalseConnector">799.5,256.5 829.5,256.5 829.5,261.5 969.5,261.5</av:PointCollection>
+              <av:PointCollection x:Key="TrueConnector">720.5,256.5 690.5,256.5 690.5,261.5 550.5,261.5</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <FlowDecision.True>
@@ -201,11 +201,11 @@
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">350.5,231</av:Point>
-                  <av:Size x:Key="ShapeSize">200,51</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">450.5,282 450.5,332</av:PointCollection>
+                  <av:Size x:Key="ShapeSize">200,61</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">450.5,292 450.5,332</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:InvokeCode ContinueOnError="{x:Null}" Code="If isnothing(formula) Then formula = &quot;&quot;&#xA;Dim dummy As String = &quot;cr42guyt2nbernardbum424lsuslawes986d&quot;&#xA;If isnothing(keywords) Then keywords = {dummy}&#xA;Dim kwords As String = &quot;&quot;&#xA;&#x9;&#xA;If isnothing(formulaAuto) Then formulaauto = {}&#xA;&#xA;Dim lst As list(Of String) = New list(Of String)&#xA;Dim kst As list(Of String) = New list(Of String)&#xA;Dim pattern As String = &quot;&quot;&#xA;Dim fmlauto As String = &quot;&quot;&#xA;&#xA;Dim i As  Integer = 0&#xA;If keywords.Length &gt; 0 Then&#xA;&#x9;'Trim spaces between keywords&#xA;&#x9;For Each f As String In keywords&#xA;&#x9;&#x9;If f.Trim.Length &gt; 0 Then&#x9;kst.Add(f.trim)&#xA;&#x9;&#x9;'console.WriteLine(keywords(i).Length.ToString)&#xA;&#x9;&#x9;i = i+ 1&#xA;&#x9;Next&#xA;&#x9;'Join Keywords into on | delimited string&#xA;&#x9;If kst.Count &gt; 0 Then kwords = Join(kst.ToArray,&quot;|&quot;)&#xA;&#x9;&#xA;&#x9;'Add Keywords to list of regex&#xA;&#x9;If kwords.Length &gt; 0 Then  lst.Add(&quot;(?i)(&quot;+kwords+&quot;)&quot;)&#xA;End If&#xA; &#xA;&#xA;'If kwords.Length &gt; 0 Then&#xA;&#xA;'Add Auto Formulas&#xA;For Each f As String In formulaAuto&#xA;&#x9;f = f.ToLower&#xA;&#x9;&#xA;&#x9;Select Case f&#x9;&#xA;&#x9;&#x9;&#x9;Case &quot;ssn&quot;&#xA;&#x9;&#x9;&#x9;&#x9;pattern = &quot;\d{3}-\d{2}-\d{4}&quot;&#xA;&#x9;&#x9;&#x9;Case &quot;ein&quot;&#xA;&#x9;&#x9;&#x9;&#x9;pattern = &quot;\d{2}-\d{7}&quot;&#xA;&#x9;&#x9;&#x9;Case &quot;dates&quot;&#xA;&#x9;&#x9;&#x9;&#x9;pattern = &quot;((\d{1,2}[/-]\d{1,2}[/-]\d{4})|(\d{4}[/-]\d{1,2}[/-]\d{1,2}))&quot;&#xA;&#x9;&#x9;&#x9;&#x9;'pattern = &quot;((?&lt;=\s)(?:(?:(?:(?:0?[13578]|1[02])(?&lt;first&gt;\/|-|\.)31)\k&lt;first&gt;|(?:(?:0?[13-9]|1[0-2])(?&lt;second&gt;\/|-|\.)(?:29|30)\k&lt;second&gt;))(?:(?:1[6-9]|[2-9]\d)?\d{2})|(?:0?2(?&lt;third&gt;\/|-|\.)29\k&lt;third&gt;(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))|(?:(?:0?[1-9])|(?:1[0-2]))(?&lt;fourth&gt;\/|-|\.)(?:0?[1-9]|1\d|2[0-8])\k&lt;fourth&gt;(?:(?:1[6-9]|[2-9]\d)?\d{2})|(?:(?:(?:January|March|May|July|August|October|December)(?&lt;fifth&gt;\/|-|\s)31)\k&lt;fifth&gt;|(?:(?:January|March|April|May|June|July|August|September|October|November|December)(?&lt;sixth&gt;\/|-|\s)(?:29|30)\k&lt;sixth&gt;))(?:(?:1[6-9]|[2-9]\d)?\d{2})|(?:February(?&lt;seventh&gt;\/|-|\s)29\k&lt;seventh&gt;(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))|(?:January|February|March|April|May|June|July|August|September|October|November|December)(?&lt;eighth&gt;\/|-|\s)(?:0?[1-9]|1\d|2[0-8])\k&lt;eighth&gt;(?:(?:1[6-9]|[2-9]\d)?\d{2}))|(\d{4}[\-\/\.]?((((0[13578])|(1[02]))[\-\/\.]?(([0-2][0-9])|(3[01])))|(((0[469])|(11))[\-\/\.]?(([0-2][0-9])|(30)))|(02[\-\/\.]?[0-2][0-9])))|(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)(\/|-|\s)(\d{1,2})(,)?(\/|-|\s?)(\d{4})|(\d{4})(\/|-|\s)(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)(\/|-|\s)(\d{1,2})|\d{2}[\-\/\.]\d{2}[\-\/\.]\d{4})&quot;&#xA;&#x9;&#x9;&#x9;Case &quot;currency&quot;&#xA;&#x9;&#x9;&#x9;&#x9;'pattern = &quot;([\$円][+-]?[0-9]{1,3}(?:,?[0-9]{3})*(?:\.[0-9]{2})?\s*)&quot;&#xA;&#x9;&#x9;&#x9;&#x9;pattern = &quot;\$\s?-?0*(?:\d+(?!,)(?:\.\d{1,2})?|(?:\d{1,3}(?:,\d{3})*(?:\.\d{1,2})?))&quot;&#xA;&#x9;&#x9;&#x9;Case &quot;email&quot;&#xA;&#x9;&#x9;&#x9;&#x9;pattern = &quot;\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*&quot;&#xA;&#x9;&#x9;&#x9;Case &quot;phone&quot;&#xA;&#x9;&#x9;&#x9;&#x9;pattern = &quot;(\([0-9]{3}\)|[0-9]{3}-)\s{0,1}[0-9]{3}-[0-9]{4}&quot;&#xA;&#x9;&#x9;&#x9;Case Else&#xA;&#x9;&#x9;&#x9;&#x9;pattern = &quot;&quot;&#xA;&#x9;End Select &#xA;&#x9;&#xA;&#x9;If pattern.Length &gt; 0 Then lst.Add(&quot;(&quot;+pattern+&quot;)&quot;)&#xA;Next&#xA;&#xA;'Add Custom Formulas&#xA;If formula.trim.Length &gt; 0 Then &#x9;lst.Add(&quot;(&quot;+formula+&quot;)&quot;)&#xA;&#x9;&#xA;If Not silent Then&#xA;&#x9;'console.WriteLine(&quot;Keywords: &quot;+kwords)&#xA;&#x9;console.WriteLine(&quot;Common: &quot;+Join(formulaAuto,&quot; | &quot;))&#xA;&#x9;console.WriteLine(&quot;Custom: &quot;+formula)&#xA;If keywords(0) &lt;&gt; dummy Then console.WriteLine(&quot;Keywords: &quot;+ Join(kst.ToArray,&quot; | &quot;)) Else console.WriteLine(&quot;Keywords: &quot;)&#xA;End If&#xA;&#xA;formula = Join(lst.ToArray,&quot;|&quot;)&#xA;&#xA;'Apply Regex global options&#xA;'Formula = &quot;(?i)&quot;+&quot;(&quot;+Formula+&quot;)&quot;&#xA;&#xA;'console.WriteLine(formula)&#xA;&#xA;" DisplayName="Create Formula" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeCode_19">
+              <ui:InvokeCode ContinueOnError="{x:Null}" Code="If isnothing(formula) Then formula = &quot;&quot;&#xD;&#xA;Dim dummy As String = &quot;cr42guyt2nabcdefghij424klmnopqrs986d&quot;&#xD;&#xA;If isnothing(keywords) Then keywords = {dummy}&#xD;&#xA;Dim kwords As String = &quot;&quot;&#xD;&#xA;&#x9;&#xD;&#xA;If isnothing(formulaAuto) Then formulaauto = {}&#xD;&#xA;&#xD;&#xA;Dim lst As list(Of String) = New list(Of String)&#xD;&#xA;Dim kst As list(Of String) = New list(Of String)&#xD;&#xA;Dim pattern As String = &quot;&quot;&#xD;&#xA;Dim fmlauto As String = &quot;&quot;&#xD;&#xA;&#xD;&#xA;Dim i As  Integer = 0&#xD;&#xA;If keywords.Length &gt; 0 Then&#xD;&#xA;&#x9;'Trim spaces between keywords&#xD;&#xA;&#x9;For Each f As String In keywords&#xD;&#xA;&#x9;&#x9;If f.Trim.Length &gt; 0 Then&#x9;kst.Add(f.trim)&#xD;&#xA;&#x9;&#x9;'console.WriteLine(keywords(i).Length.ToString)&#xD;&#xA;&#x9;&#x9;i = i+ 1&#xD;&#xA;&#x9;Next&#xD;&#xA;&#x9;'Join Keywords into on | delimited string&#xD;&#xA;&#x9;If kst.Count &gt; 0 Then kwords = Join(kst.ToArray,&quot;|&quot;)&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Add Keywords to list of regex&#xD;&#xA;&#x9;If kwords.Length &gt; 0 Then  lst.Add(&quot;(?i)(&quot;+kwords+&quot;)&quot;)&#xD;&#xA;End If&#xD;&#xA; &#xD;&#xA;&#xD;&#xA;'If kwords.Length &gt; 0 Then&#xD;&#xA;&#xD;&#xA;'Add Auto Formulas&#xD;&#xA;For Each f As String In formulaAuto&#xD;&#xA;&#x9;f = f.ToLower&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;Select Case f&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;Case &quot;ssn&quot;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;pattern = &quot;\d{3}-\d{2}-\d{4}&quot;&#xD;&#xA;&#x9;&#x9;&#x9;Case &quot;ein&quot;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;pattern = &quot;\d{2}-\d{7}&quot;&#xD;&#xA;&#x9;&#x9;&#x9;Case &quot;dates&quot;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;pattern = &quot;((\d{1,2}[/-]\d{1,2}[/-]\d{4})|(\d{4}[/-]\d{1,2}[/-]\d{1,2}))&quot;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;'pattern = &quot;((?&lt;=\s)(?:(?:(?:(?:0?[13578]|1[02])(?&lt;first&gt;\/|-|\.)31)\k&lt;first&gt;|(?:(?:0?[13-9]|1[0-2])(?&lt;second&gt;\/|-|\.)(?:29|30)\k&lt;second&gt;))(?:(?:1[6-9]|[2-9]\d)?\d{2})|(?:0?2(?&lt;third&gt;\/|-|\.)29\k&lt;third&gt;(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))|(?:(?:0?[1-9])|(?:1[0-2]))(?&lt;fourth&gt;\/|-|\.)(?:0?[1-9]|1\d|2[0-8])\k&lt;fourth&gt;(?:(?:1[6-9]|[2-9]\d)?\d{2})|(?:(?:(?:January|March|May|July|August|October|December)(?&lt;fifth&gt;\/|-|\s)31)\k&lt;fifth&gt;|(?:(?:January|March|April|May|June|July|August|September|October|November|December)(?&lt;sixth&gt;\/|-|\s)(?:29|30)\k&lt;sixth&gt;))(?:(?:1[6-9]|[2-9]\d)?\d{2})|(?:February(?&lt;seventh&gt;\/|-|\s)29\k&lt;seventh&gt;(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))|(?:January|February|March|April|May|June|July|August|September|October|November|December)(?&lt;eighth&gt;\/|-|\s)(?:0?[1-9]|1\d|2[0-8])\k&lt;eighth&gt;(?:(?:1[6-9]|[2-9]\d)?\d{2}))|(\d{4}[\-\/\.]?((((0[13578])|(1[02]))[\-\/\.]?(([0-2][0-9])|(3[01])))|(((0[469])|(11))[\-\/\.]?(([0-2][0-9])|(30)))|(02[\-\/\.]?[0-2][0-9])))|(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)(\/|-|\s)(\d{1,2})(,)?(\/|-|\s?)(\d{4})|(\d{4})(\/|-|\s)(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)(\/|-|\s)(\d{1,2})|\d{2}[\-\/\.]\d{2}[\-\/\.]\d{4})&quot;&#xD;&#xA;&#x9;&#x9;&#x9;Case &quot;currency&quot;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;'pattern = &quot;([\$円][+-]?[0-9]{1,3}(?:,?[0-9]{3})*(?:\.[0-9]{2})?\s*)&quot;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;pattern = &quot;\$\s?-?0*(?:\d+(?!,)(?:\.\d{1,2})?|(?:\d{1,3}(?:,\d{3})*(?:\.\d{1,2})?))&quot;&#xD;&#xA;&#x9;&#x9;&#x9;Case &quot;email&quot;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;pattern = &quot;\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*&quot;&#xD;&#xA;&#x9;&#x9;&#x9;Case &quot;phone&quot;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;pattern = &quot;(\([0-9]{3}\)|[0-9]{3}-)\s{0,1}[0-9]{3}-[0-9]{4}&quot;&#xD;&#xA;&#x9;&#x9;&#x9;Case Else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;pattern = &quot;&quot;&#xD;&#xA;&#x9;End Select &#xD;&#xA;&#x9;&#xD;&#xA;&#x9;If pattern.Length &gt; 0 Then lst.Add(&quot;(&quot;+pattern+&quot;)&quot;)&#xD;&#xA;Next&#xD;&#xA;&#xD;&#xA;'Add Custom Formulas&#xD;&#xA;If formula.trim.Length &gt; 0 Then &#x9;lst.Add(&quot;(&quot;+formula+&quot;)&quot;)&#xD;&#xA;&#x9;&#xD;&#xA;If Not silent Then&#xD;&#xA;&#x9;'console.WriteLine(&quot;Keywords: &quot;+kwords)&#xD;&#xA;&#x9;console.WriteLine(&quot;Common: &quot;+Join(formulaAuto,&quot; | &quot;))&#xD;&#xA;&#x9;console.WriteLine(&quot;Custom: &quot;+formula)&#xD;&#xA;If keywords(0) &lt;&gt; dummy Then console.WriteLine(&quot;Keywords: &quot;+ Join(kst.ToArray,&quot; | &quot;)) Else console.WriteLine(&quot;Keywords: &quot;)&#xD;&#xA;End If&#xD;&#xA;&#xD;&#xA;formula = Join(lst.ToArray,&quot;|&quot;)&#xD;&#xA;&#xD;&#xA;'Apply Regex global options&#xD;&#xA;'Formula = &quot;(?i)&quot;+&quot;(&quot;+Formula+&quot;)&quot;&#xD;&#xA;&#xD;&#xA;'console.WriteLine(formula)&#xD;&#xA;&#xD;&#xA;" DisplayName="Create Formula" sap:VirtualizedContainerService.HintSize="200,61" sap2010:WorkflowViewState.IdRef="InvokeCode_19">
                 <ui:InvokeCode.Arguments>
                   <InOutArgument x:TypeArguments="x:String" x:Key="formula">[Formula]</InOutArgument>
                   <InArgument x:TypeArguments="s:String[]" x:Key="keywords">[Keywords]</InArgument>
@@ -226,8 +226,8 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <av:Point x:Key="ShapeLocation">411,332</av:Point>
                       <av:Size x:Key="ShapeSize">79,87</av:Size>
-                      <av:PointCollection x:Key="TrueConnector">411,375.5 211,375.5</av:PointCollection>
-                      <av:PointCollection x:Key="FalseConnector">490,375.5 660,375.5</av:PointCollection>
+                      <av:PointCollection x:Key="TrueConnector">411,375.5 381,375.5 381,387.5 211,387.5</av:PointCollection>
+                      <av:PointCollection x:Key="FalseConnector">490,375.5 520,375.5 520,380.5 660,380.5</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <FlowDecision.True>
@@ -235,10 +235,10 @@
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <av:Point x:Key="ShapeLocation">11,342.5</av:Point>
-                          <av:Size x:Key="ShapeSize">200,66</av:Size>
+                          <av:Size x:Key="ShapeSize">200,90</av:Size>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence DisplayName="IMG" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_60">
+                      <Sequence DisplayName="IMG" sap:VirtualizedContainerService.HintSize="669,1845" sap2010:WorkflowViewState.IdRef="Sequence_60">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:String" Name="ext" />
                           <Variable x:TypeArguments="ui:Image" Name="imageInput" />
@@ -250,14 +250,14 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Sequence DisplayName="Notification" sap:VirtualizedContainerService.HintSize="563,533" sap2010:WorkflowViewState.IdRef="Sequence_59">
+                        <Sequence DisplayName="Notification" sap:VirtualizedContainerService.HintSize="607,623" sap2010:WorkflowViewState.IdRef="Sequence_59">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Assign sap:VirtualizedContainerService.HintSize="521,60" sap2010:WorkflowViewState.IdRef="Assign_64">
+                          <Assign sap:VirtualizedContainerService.HintSize="545,70" sap2010:WorkflowViewState.IdRef="Assign_64">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:String">[msg]</OutArgument>
                             </Assign.To>
@@ -265,7 +265,7 @@
                               <InArgument x:TypeArguments="x:String">[Method+"ing: " + system.io.path.GetFileName(InputFile)]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <If Condition="[Silent]" DisplayName="Status Update" sap:VirtualizedContainerService.HintSize="521,341" sap2010:WorkflowViewState.IdRef="If_28">
+                          <If Condition="[Silent]" DisplayName="Status Update" sap:VirtualizedContainerService.HintSize="545,391" sap2010:WorkflowViewState.IdRef="If_28">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -273,7 +273,7 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <If.Else>
-                              <Sequence sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_58">
+                              <Sequence sap:VirtualizedContainerService.HintSize="400,223" sap2010:WorkflowViewState.IdRef="Sequence_58">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="x:String" Name="perc" />
                                 </Sequence.Variables>
@@ -282,12 +282,12 @@
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_15" Message="[msg]" />
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,101" sap2010:WorkflowViewState.IdRef="LogMessage_15" Message="[msg]" />
                               </Sequence>
                             </If.Else>
                           </If>
                         </Sequence>
-                        <Assign sap:VirtualizedContainerService.HintSize="497,60" sap2010:WorkflowViewState.IdRef="Assign_65">
+                        <Assign sap:VirtualizedContainerService.HintSize="607,70" sap2010:WorkflowViewState.IdRef="Assign_65">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:String">[FileIMGOut]</OutArgument>
                           </Assign.To>
@@ -295,7 +295,7 @@
                             <InArgument x:TypeArguments="x:String">[OutputFile]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <ui:LoadImage DisplayName="Load Image" FileName="[InputFile]" sap:VirtualizedContainerService.HintSize="497,59" sap2010:WorkflowViewState.IdRef="LoadImage_3" Image="[imageInput]">
+                        <ui:LoadImage DisplayName="Load Image" FileName="[InputFile]" sap:VirtualizedContainerService.HintSize="607,69" sap2010:WorkflowViewState.IdRef="LoadImage_3" Image="[imageInput]">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -303,7 +303,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:LoadImage>
-                        <Assign sap:VirtualizedContainerService.HintSize="497,60" sap2010:WorkflowViewState.IdRef="Assign_66">
+                        <Assign sap:VirtualizedContainerService.HintSize="607,70" sap2010:WorkflowViewState.IdRef="Assign_66">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:String">[ext]</OutArgument>
                           </Assign.To>
@@ -311,9 +311,9 @@
                             <InArgument x:TypeArguments="x:String">[path.GetExtension(InputFile).ToLower]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[OCREngine.ToLower]" sap:VirtualizedContainerService.HintSize="497,160" sap2010:WorkflowViewState.IdRef="Switch`1_5">
+                        <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[OCREngine.ToLower]" sap:VirtualizedContainerService.HintSize="607,303" sap2010:WorkflowViewState.IdRef="Switch`1_5">
                           <Switch.Default>
-                            <uoa:OmniPageOCR Language="{x:Null}" Output="{x:Null}" Profile="{x:Null}" Scale="{x:Null}" BundleType="Basic" ComputeSkewAngle="False" DisplayName="OmniPage OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="OmniPageOCR_4" Image="[ImageInput]" Result="[words]" Text="[text]" />
+                            <uoa:OmniPageOCR Language="{x:Null}" Output="{x:Null}" Profile="{x:Null}" Scale="{x:Null}" BundleType="Basic" ComputeSkewAngle="False" DisplayName="OmniPage OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="284,89" sap2010:WorkflowViewState.IdRef="OmniPageOCR_4" Image="[ImageInput]" Result="[words]" Text="[text]" />
                           </Switch.Default>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -321,10 +321,10 @@
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <p:UiPathDocumentOCR Endpoint="{x:Null}" Output="{x:Null}" x:Key="uipath" ApiKey="[OCRAPIKey]" ComputeSkewAngle="False" DisplayName="UiPath Document OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="284,79" sap2010:WorkflowViewState.IdRef="UiPathDocumentOCR_4" Image="[imageInput]" Language="auto" Profile="None" Result="[words]" Scale="1" Text="[text]" />
-                          <ui:GoogleCloudOCR FilterRegion="{x:Null}" Language="{x:Null}" Output="{x:Null}" Profile="{x:Null}" Scale="{x:Null}" x:Key="google" ApiKey="[OCRAPIKey]" ComputeSkewAngle="False" ExtractWords="False" sap:VirtualizedContainerService.HintSize="284,79" sap2010:WorkflowViewState.IdRef="GoogleCloudOCR_3" Image="[imageInput]" ResizeToApiLimits="False" Result="[words]" Text="[text]" />
+                          <p:UiPathDocumentOCR Endpoint="{x:Null}" Output="{x:Null}" x:Key="uipath" ApiKey="[OCRAPIKey]" ComputeSkewAngle="False" DisplayName="UiPath Document OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="284,89" sap2010:WorkflowViewState.IdRef="UiPathDocumentOCR_4" Image="[imageInput]" Language="auto" Profile="None" Result="[words]" Scale="1" Text="[text]" />
+                          <ui:GoogleCloudOCR FilterRegion="{x:Null}" Language="{x:Null}" Output="{x:Null}" Profile="{x:Null}" Scale="{x:Null}" x:Key="google" ApiKey="[OCRAPIKey]" ComputeSkewAngle="False" ExtractWords="False" sap:VirtualizedContainerService.HintSize="284,89" sap2010:WorkflowViewState.IdRef="GoogleCloudOCR_3" Image="[imageInput]" ResizeToApiLimits="False" Result="[words]" Text="[text]" />
                         </Switch>
-                        <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim myBrush As system.Drawing.SolidBrush&#xA;Dim myPen As system.Drawing.Pen&#xA;Dim pb As system.windows.Forms.PictureBox = New system.Windows.Forms.PictureBox()&#xA;Dim rect As system.Drawing.Rectangle&#xA;Dim fontColor As system.Drawing.Color&#xA;Dim thickness As Int32 = 3&#xA;&#xA;If IsNothing(RedactColor) Then RedactColor = system.Drawing.Color.Black&#xA;myBrush =  New SolidBrush(RedactColor)&#xA;myPen = New system.Drawing.Pen(RedactColor, thickness)&#xA;&#xA;'place image in picturebox&#xA;pb.image = imgin&#xA;&#x9;&#xA;'Redact the image&#xA;Try&#xA;&#x9;&#x9;Using g  As system.Drawing.Graphics = system.Drawing.Graphics.FromImage(pb.image) &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;For Each item As system.Collections.Generic.KeyValuePair(Of System.Drawing.Rectangle, String) In words&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;rect = item.Key&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;If System.Text.RegularExpressions.regex.IsMatch(item.Value.Trim,formula)   Then If HighlightOnly Then g.DrawRectangle(myPen,rect) Else g.FillRectangle(myBrush, rect)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Next&#xA;&#x9;&#x9;End Using&#xA;Catch ex As Exception&#xA;&#x9;console.ForegroundColor = ConsoleColor.Red&#xA;&#x9;console.WriteLine(&quot;Unexpected error: &quot;+ filename + vbCrLf + ex.Message)&#xA;&#x9;console.ForegroundColor = ConsoleColor.White&#xA;&#x9;imgin.Dispose()&#xA;&#x9;Return&#xA;Finally&#xA;&#x9;&#xA;End Try&#xA;&#xA;'Save the image to disk&#xA;Dim TIFFS As String() = {&quot;.tif&quot;,&quot;.tiff&quot;}&#xA;Dim PNGS As String() = {&quot;.png&quot;}&#xA;Dim JPEGS As String() = {&quot;.jpg&quot;,&quot;.jpeg&quot;}&#xA;Try&#xA;&#x9;&#x9;If TIFFS.Contains(ext) Then&#xA;&#x9;&#x9;&#x9;pb.Image.Save(fileout,system.Drawing.Imaging.ImageFormat.Tiff)&#xA;&#x9;&#x9;&#x9;Else If PNGS.Contains(ext) Then&#xA;&#x9;&#x9;&#x9;pb.Image.Save(fileout,system.Drawing.Imaging.ImageFormat.Png)&#xA;&#x9;&#x9;&#x9;Else&#xA;&#x9;&#x9;&#x9;pb.Image.Save(fileout,system.Drawing.Imaging.ImageFormat.Jpeg)&#xA;&#x9;&#x9;End If&#xA;&#x9;&#x9;pb.Image = Nothing&#xA;Catch ex As Exception&#xA;&#x9;&#x9;console.WriteLine(&quot;Can't Save File: &quot; + ex.Message + &quot; &quot; + fileOut)&#xA;&#x9;&#x9;fileOut = Nothing&#xA;Finally&#xA;&#x9;&#x9;'Dispose Image&#xA;&#x9;&#x9;imgin.Dispose()&#xA;End Try" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="497,164" sap2010:WorkflowViewState.IdRef="InvokeCode_22">
+                        <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim myBrush As system.Drawing.SolidBrush&#xA;Dim myPen As system.Drawing.Pen&#xA;Dim pb As system.windows.Forms.PictureBox = New system.Windows.Forms.PictureBox()&#xA;Dim rect As system.Drawing.Rectangle&#xA;Dim fontColor As system.Drawing.Color&#xA;Dim thickness As Int32 = 3&#xA;&#xA;If IsNothing(RedactColor) Then RedactColor = system.Drawing.Color.Black&#xA;myBrush =  New SolidBrush(RedactColor)&#xA;myPen = New system.Drawing.Pen(RedactColor, thickness)&#xA;&#xA;'place image in picturebox&#xA;pb.image = imgin&#xA;&#x9;&#xA;'Redact the image&#xA;Try&#xA;&#x9;&#x9;Using g  As system.Drawing.Graphics = system.Drawing.Graphics.FromImage(pb.image) &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;For Each item As system.Collections.Generic.KeyValuePair(Of System.Drawing.Rectangle, String) In words&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;rect = item.Key&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;If System.Text.RegularExpressions.regex.IsMatch(item.Value.Trim,formula)   Then If HighlightOnly Then g.DrawRectangle(myPen,rect) Else g.FillRectangle(myBrush, rect)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Next&#xA;&#x9;&#x9;End Using&#xA;Catch ex As Exception&#xA;&#x9;console.ForegroundColor = ConsoleColor.Red&#xA;&#x9;console.WriteLine(&quot;Unexpected error: &quot;+ filename + vbCrLf + ex.Message)&#xA;&#x9;console.ForegroundColor = ConsoleColor.White&#xA;&#x9;imgin.Dispose()&#xA;&#x9;Return&#xA;Finally&#xA;&#x9;&#xA;End Try&#xA;&#xA;'Save the image to disk&#xA;Dim TIFFS As String() = {&quot;.tif&quot;,&quot;.tiff&quot;}&#xA;Dim PNGS As String() = {&quot;.png&quot;}&#xA;Dim JPEGS As String() = {&quot;.jpg&quot;,&quot;.jpeg&quot;}&#xA;Try&#xA;&#x9;&#x9;If TIFFS.Contains(ext) Then&#xA;&#x9;&#x9;&#x9;pb.Image.Save(fileout,system.Drawing.Imaging.ImageFormat.Tiff)&#xA;&#x9;&#x9;&#x9;Else If PNGS.Contains(ext) Then&#xA;&#x9;&#x9;&#x9;pb.Image.Save(fileout,system.Drawing.Imaging.ImageFormat.Png)&#xA;&#x9;&#x9;&#x9;Else&#xA;&#x9;&#x9;&#x9;pb.Image.Save(fileout,system.Drawing.Imaging.ImageFormat.Jpeg)&#xA;&#x9;&#x9;End If&#xA;&#x9;&#x9;pb.Image = Nothing&#xA;Catch ex As Exception&#xA;&#x9;&#x9;console.WriteLine(&quot;Can't Save File: &quot; + ex.Message + &quot; &quot; + fileOut)&#xA;&#x9;&#x9;fileOut = Nothing&#xA;Finally&#xA;&#x9;&#x9;'Dispose Image&#xA;&#x9;&#x9;imgin.Dispose()&#xA;End Try" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="607,174" sap2010:WorkflowViewState.IdRef="InvokeCode_22">
                           <ui:InvokeCode.Arguments>
                             <InArgument x:TypeArguments="scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))" x:Key="words">[words]</InArgument>
                             <InArgument x:TypeArguments="x:String" x:Key="text">[Text]</InArgument>
@@ -344,7 +344,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:InvokeCode>
-                        <ui:InvokeCode ContinueOnError="{x:Null}" Code="If Not IsNothing(fileout) Then&#xA;&#x9;If system.io.File.Exists(fileout) Then&#xA;&#x9;&#x9;files.Add(fileOut)&#xA;&#x9;End If&#xA;End If&#xA;&#xA;Try&#xA;imgin.Dispose&#xA;Catch ex As Exception&#xA;&#xA;Finally&#xA;&#x9;&#xA;End Try" DisplayName="Close Image / Add to List" sap:VirtualizedContainerService.HintSize="497,164" sap2010:WorkflowViewState.IdRef="InvokeCode_23">
+                        <ui:InvokeCode ContinueOnError="{x:Null}" Code="If Not IsNothing(fileout) Then&#xA;&#x9;If system.io.File.Exists(fileout) Then&#xA;&#x9;&#x9;files.Add(fileOut)&#xA;&#x9;End If&#xA;End If&#xA;&#xA;Try&#xA;imgin.Dispose&#xA;Catch ex As Exception&#xA;&#xA;Finally&#xA;&#x9;&#xA;End Try" DisplayName="Close Image / Add to List" sap:VirtualizedContainerService.HintSize="607,174" sap2010:WorkflowViewState.IdRef="InvokeCode_23">
                           <ui:InvokeCode.Arguments>
                             <InArgument x:TypeArguments="x:String" x:Key="fileout">[FileIMGOut]</InArgument>
                             <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="files">[OutputFiles]</InOutArgument>
@@ -365,10 +365,10 @@
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <av:Point x:Key="ShapeLocation">660,350</av:Point>
-                          <av:Size x:Key="ShapeSize">200,51</av:Size>
+                          <av:Size x:Key="ShapeSize">200,61</av:Size>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[r]" DisplayName="For Each Read and Redact" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[files]">
+                      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[r]" DisplayName="For Each Read and Redact" sap:VirtualizedContainerService.HintSize="200,61" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[files]">
                         <ui:ForEach.Body>
                           <ActivityAction x:TypeArguments="x:String">
                             <ActivityAction.Argument>
@@ -512,10 +512,10 @@
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">969.5,231</av:Point>
-                  <av:Size x:Key="ShapeSize">200,51</av:Size>
+                  <av:Size x:Key="ShapeSize">200,61</av:Size>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Error" Message="[&quot;Exiting.....&quot;]">
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,61" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Error" Message="[&quot;Exiting.....&quot;]">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
