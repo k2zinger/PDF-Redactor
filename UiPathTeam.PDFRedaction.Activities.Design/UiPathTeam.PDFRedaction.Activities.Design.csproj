@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop" ToolsVersion="Current">
+	<PropertyGroup>
+    <TargetFrameworks>net6.0-windows</TargetFrameworks>
+		<OutputPath>..\..\Output\Activities\PDFRedaction\</OutputPath>
+		<UseWpf>true</UseWpf>
+	</PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Activities.Core.Presentation" Version="6.0.0-*" PrivateAssets="All"/>
+  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\UiPathTeam.PDFRedaction.Activities\UiPathTeam.PDFRedaction.Activities.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Update="Properties\UiPathTeam.PDFRedaction.Activities.Design.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>UiPathTeam.PDFRedaction.Activities.Design.resx</DependentUpon>
+		</Compile>
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Update="Properties\UiPathTeam.PDFRedaction.Activities.Design.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+			<LastGenOutput>UiPathTeam.PDFRedaction.Activities.Design.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+	</ItemGroup>
+</Project>

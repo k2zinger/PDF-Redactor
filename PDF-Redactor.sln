@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UiPathTeam.PDFRedaction.Activities", "UiPathTeam.PDFRedaction.Activities\UiPathTeam.PDFRedaction.Activities.csproj", "{B3BE9EC6-A099-462A-B01A-EBCF8781862B}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "UiPath.Shared.Activities", "Shared\UiPath.Shared.Activities\UiPath.Shared.Activities.shproj", "{4546856D-EA50-45C6-9419-EEEACB5A80AA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{4BA8AC9C-075B-458A-B493-60D6B256A225}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "UiPath.Shared.Activities.Design", "Shared\UiPath.Shared.Activities.Design\UiPath.Shared.Activities.Design.shproj", "{DF9C43F0-ADD3-4FBF-995E-84B92F9CBF25}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UiPathTeam.PDFRedaction.Activities.Packaging", "UiPathTeam.PDFRedaction.Activities.Packaging\UiPathTeam.PDFRedaction.Activities.Packaging.csproj", "{B105E88D-5B13-4F3E-A3FE-A0EFCB0BFCB5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0308894A-9588-4CEA-B80F-CC5298632DB3}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.build.targets = Directory.build.targets
+		GlobalAssemblyInfo.cs = GlobalAssemblyInfo.cs
+		PDFRedaction.build.props = PDFRedaction.build.props
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UiPathTeam.PDFRedaction.Activities.Design", "UiPathTeam.PDFRedaction.Activities.Design\UiPathTeam.PDFRedaction.Activities.Design.csproj", "{9EA605B8-8DC3-45E9-8DFA-980928BE34F7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B3BE9EC6-A099-462A-B01A-EBCF8781862B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3BE9EC6-A099-462A-B01A-EBCF8781862B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3BE9EC6-A099-462A-B01A-EBCF8781862B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3BE9EC6-A099-462A-B01A-EBCF8781862B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B105E88D-5B13-4F3E-A3FE-A0EFCB0BFCB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B105E88D-5B13-4F3E-A3FE-A0EFCB0BFCB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B105E88D-5B13-4F3E-A3FE-A0EFCB0BFCB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B105E88D-5B13-4F3E-A3FE-A0EFCB0BFCB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EA605B8-8DC3-45E9-8DFA-980928BE34F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EA605B8-8DC3-45E9-8DFA-980928BE34F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EA605B8-8DC3-45E9-8DFA-980928BE34F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EA605B8-8DC3-45E9-8DFA-980928BE34F7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4546856D-EA50-45C6-9419-EEEACB5A80AA} = {4BA8AC9C-075B-458A-B493-60D6B256A225}
+		{DF9C43F0-ADD3-4FBF-995E-84B92F9CBF25} = {4BA8AC9C-075B-458A-B493-60D6B256A225}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0D1065AD-E689-4F80-A84D-43173661D480}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Shared\UiPath.Shared.Activities\UiPath.Shared.Activities.projitems*{4546856d-ea50-45c6-9419-eeeacb5a80aa}*SharedItemsImports = 13
+		Shared\UiPath.Shared.Activities\UiPath.Shared.Activities.projitems*{b3be9ec6-a099-462a-b01a-ebcf8781862b}*SharedItemsImports = 5
+		Shared\UiPath.Shared.Activities.Design\UiPath.Shared.Activities.Design.projitems*{df9c43f0-add3-4fbf-995e-84b92f9cbf25}*SharedItemsImports = 13
+	EndGlobalSection
+EndGlobal

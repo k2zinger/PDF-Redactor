@@ -1,0 +1,81 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<Import Project="..\PDFRedaction.build.props" />
+	<PropertyGroup>
+		<TargetFrameworks>net6.0-windows</TargetFrameworks>
+		<OutputPath>..\..\Output\Activities\PDFRedaction\</OutputPath>
+		<UseWpf>true</UseWpf>
+		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+		<Platforms>AnyCPU;x86;x64</Platforms>
+		<VersionSuffix></VersionSuffix>
+		<!--leave empty for ci to replace with prelease tag-->
+		<GeneratePackageOnBuild Condition="'$(Configuration)' == 'Release'">true</GeneratePackageOnBuild>
+		<GeneratePackageOnBuild Condition="'$(Configuration)' == 'Debug'">true</GeneratePackageOnBuild>
+		<PackageOutputPath>..\..\Output\Activities\Packages\</PackageOutputPath>
+		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<PackageId>UiPathTeam.PDFRedaction.Activities</PackageId>
+		<PackageTitle>UiPathTeam.PDFRedaction.Activities</PackageTitle>
+		<PackageIconUrl>https://download.uipath.com/UI_icon.png?web</PackageIconUrl>
+		<PackageLicenseUrl>https://docs.uipath.com/activities/docs</PackageLicenseUrl>
+		<PackageTags>UiPathActivities</PackageTags>
+		<Description>UiPath PDFRedaction Activities Pack</Description>
+		<Authors>UiPath</Authors>
+		<Copyright>Copyright $(year)</Copyright>
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+		<PackageLicenseUrl>https://www.uipath.com/hubfs/legalspot/UiPath_Activity_License_Agreement.pdf</PackageLicenseUrl>
+		<PackageIconUrl>http://www.uipath.com/hubfs/Logos/uipath-nuget-logo.png</PackageIconUrl>
+		<PackageProjectUrl>https://github.com/k2zinger/PDF-Redactor</PackageProjectUrl>
+		<TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);AddDlls</TargetsForTfmSpecificBuildOutput>
+		<RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+	</PropertyGroup>
+
+	<Target Name="RemoveMetaDll" AfterTargets="BuiltProjectOutputGroup">
+		<ItemGroup>
+			<BuiltProjectOutputGroupOutput Remove="@(BuiltProjectOutputGroupOutput)" />
+		</ItemGroup>
+	</Target>
+
+	<Target Name="AddDlls">
+		<!-- PDBs for debug-->
+		<ItemGroup Condition="'$(Configuration)' == 'Debug'">
+			<BuildOutputInPackage Include="$(OutputPath)UiPathTeam.PDFRedaction.Activities.pdb" />
+		</ItemGroup>
+		<ItemGroup>
+			<BuildOutputInPackage Include="$(OutputPath)UiPathTeam.PDFRedaction.Activities.dll" />
+			<BuildOutputInPackage Include="$(OutputPath)UiPathTeam.PDFRedaction.Activities.Design.dll" />
+		</ItemGroup>
+
+		<ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
+			<BuildOutputInPackage Include="$(OutputPath)runtimes\win-x86\native\pdfium.x86.dll" TargetPath="runtimes\win-x86\native\pdfium.x86.dll" />
+			<BuildOutputInPackage Include="$(OutputPath)runtimes\win-x86\native\libSkiaSharp.x86.dll" TargetPath="runtimes\win-x86\native\libSkiaSharp.x86.dll" />
+		</ItemGroup>
+		<ItemGroup Condition=" '$(TargetFramework)' == 'net6.0-windows' ">
+			<BuildOutputInPackage Include="$(OutputPath)runtimes\win-x64\native\pdfium.dll" TargetPath="runtimes\win-x64\native\pdfium.dll" />
+			<BuildOutputInPackage Include="$(OutputPath)runtimes\win-x64\native\libSkiaSharp.dll" TargetPath="runtimes\win-x64\native\libSkiaSharp.dll" />
+		</ItemGroup>
+	</Target>
+	<Target Name="CleanPackageFiles" BeforeTargets="Build">
+		<Message Text="Deleting packages ..." />
+		<ItemGroup>
+			<PackageFilesToDelete Include="$(PackageOutputPath)\$(PackageId)*.nupkg" />
+		</ItemGroup>
+		<Delete Files="@(PackageFilesToDelete)" ContinueOnError="WarnAndContinue" />
+	</Target>
+
+  <ItemGroup>
+    <PackageReference Include="PDFsharp" Version="6.1.1" />
+    <PackageReference Include="PDFtoImage" Version="4.1.1" />
+    <PackageReference Include="UiPath.OCR.Contracts" Version="*" PrivateAssets="All" />
+    <PackageReference Include="UiPath.DocumentProcessing.Contracts" Version="*" />
+  </ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\UiPathTeam.PDFRedaction.Activities.Design\UiPathTeam.PDFRedaction.Activities.Design.csproj" PrivateAssets="All" />
+	</ItemGroup>
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition=" '$(TargetFramework)' == 'net461'">
+		<Exec Command="if exist &quot;$(ProjectDir)..\..\Output\Activities\Packages\UiPathTeam.PDFRedaction.*&quot; del &quot;$(ProjectDir)..\..\Output\Activities\Packages\UiPathTeam.PDFRedaction.*&quot;&#xD;&#xA;&#xD;&#xA;&quot;powershell.exe&quot; -NonInteractive -ExecutionPolicy Unrestricted -file &quot;$(ProjectDir)..\..\Tools\net.sdk\pack-project.ps1&quot; -projectPath &quot;$(ProjectPath)&quot; -outputPath &quot;$(ProjectDir)..\..\Output\Activities\Packages&quot; -suffix &quot;dev&quot;" />
+	</Target>
+</Project>

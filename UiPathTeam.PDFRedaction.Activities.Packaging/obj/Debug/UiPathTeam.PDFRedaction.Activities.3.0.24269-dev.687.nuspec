@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>UiPathTeam.PDFRedaction.Activities</id>
+    <version>3.0.24269-dev.687</version>
+    <authors>UiPath</authors>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <licenseUrl>https://www.uipath.com/hubfs/legalspot/UiPath_Activity_License_Agreement.pdf</licenseUrl>
+    <projectUrl>https://github.com/k2zinger/PDF-Redactor</projectUrl>
+    <iconUrl>http://www.uipath.com/hubfs/Logos/uipath-nuget-logo.png</iconUrl>
+    <description>UiPath PDFRedaction Activities Pack</description>
+    <copyright>Copyright</copyright>
+    <tags>UiPathActivities</tags>
+    <repository type="git" />
+    <dependencies>
+      <group targetFramework="net6.0-windows7.0">
+        <dependency id="PDFsharp" version="6.1.1" exclude="Build,Analyzers" />
+        <dependency id="PDFtoImage" version="4.1.1" exclude="Build,Analyzers" />
+        <dependency id="UiPath.DocumentProcessing.Contracts" version="1.27.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net6.0-windows7.0">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WPF" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+  <files>
+    <file src="C:\code\Output\Activities\PDFRedaction\net6.0-windows\UiPathTeam.PDFRedaction.Activities.Packaging.pdb" target="lib\net6.0-windows7.0\UiPathTeam.PDFRedaction.Activities.Packaging.pdb" />
+    <file src="..\..\Output\Activities\PDFRedaction\net6.0-windows\UiPathTeam.PDFRedaction.Activities.pdb" target="lib\net6.0-windows7.0\UiPathTeam.PDFRedaction.Activities.pdb" />
+    <file src="..\..\Output\Activities\PDFRedaction\net6.0-windows\UiPathTeam.PDFRedaction.Activities.dll" target="lib\net6.0-windows7.0\UiPathTeam.PDFRedaction.Activities.dll" />
+    <file src="..\..\Output\Activities\PDFRedaction\net6.0-windows\UiPathTeam.PDFRedaction.Activities.Design.dll" target="lib\net6.0-windows7.0\UiPathTeam.PDFRedaction.Activities.Design.dll" />
+    <file src="..\..\Output\Activities\PDFRedaction\net6.0-windows\runtimes\win-x64\native\pdfium.dll" target="lib\net6.0-windows7.0\runtimes\win-x64\native\pdfium.dll" />
+    <file src="..\..\Output\Activities\PDFRedaction\net6.0-windows\runtimes\win-x64\native\libSkiaSharp.dll" target="lib\net6.0-windows7.0\runtimes\win-x64\native\libSkiaSharp.dll" />
+  </files>
+</package>
